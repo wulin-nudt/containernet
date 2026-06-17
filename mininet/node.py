@@ -833,7 +833,7 @@ class Docker ( Host ):
         # see: https://docker-py.readthedocs.io/en/stable/api.html#docker.api.container.ContainerApiMixin.create_host_config
         hc = self.dcli.create_host_config(
             network_mode=self.network_mode,
-            privileged=False,  # no longer need privileged, using net_admin capability instead
+            privileged=True,  # no longer need privileged, using net_admin capability instead
             binds=self.volumes,
             tmpfs=self.tmpfs,
             publish_all_ports=self.publish_all_ports,
